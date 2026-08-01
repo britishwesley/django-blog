@@ -106,3 +106,8 @@ def logout(request):
 def login(request):
     login(request)
     return redirect('/posts')
+
+
+def profile(request):
+    profile = Post.objects.get(user=request.user)
+    return render(request, "profile.html", {"profile": profile})

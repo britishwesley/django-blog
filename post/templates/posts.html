@@ -28,6 +28,7 @@
                         <div style="display: flex; row-gap: 2px">
 
                             <a href="{% url 'single_post' post.id %}"><i style="color:green" class="fa fa-eye" aria-hidden="true"></i></a>
+                            <a href="{% url 'profile' %}">Profile</a>
                                                  <a  href="{% url 'edit_post' post.id %}" ><i style="color:blue" class="fa fa-pen" aria-hidden="true"></i></a>
                             <form method="POST" action="{% url 'delete_post' post.id %}">   
                                 {% csrf_token %}
