@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-lm*uc$*!@0rbl&4m&nl+%cw3k7qek(_cn#u5^qljl9%ooyjg6j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['myblog.onrender.com']
+ALLOWED_HOSTS = ['https://django-blog-wbiv.onrender.com']
 
 
 # Application definition
@@ -83,7 +83,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
