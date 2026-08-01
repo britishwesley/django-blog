@@ -1,0 +1,40 @@
+{% load static %}
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"  />
+    <title>Create post</title>
+</head> 
+<body>
+    
+    <form method="POST" action="" enctype="multipart/form-data"  >
+        {% csrf_token %}
+
+
+        <input name="title" id="title" placeholder="Enter post title"  />
+                <p style="color: red" class="">{{ form.title.errors }}</p>
+
+        <textarea name="content" placeholder="Enter post content"></textarea>
+                <p style="color: red" class="">{{ form.content.errors }}</p>
+
+        <input type="file" name="image" id="Enter post title"  />
+        
+
+        <button>Submit</button>
+
+    </form>
+
+
+    <ul>
+        {% for post in posts %}
+        <li>
+            <p class="post-title"></p><b>Title:</b> {{ post.title}}: </p>
+            <p class="post-content"></p><b>Body:</b> {{post.content}}</p>
+        </li>
+        {% endfor %}
+    </ul>

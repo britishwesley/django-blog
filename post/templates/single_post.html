@@ -1,0 +1,25 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
+    <title>Blogify — Share your story</title>
+</head>
+<body>
+
+    <p>{{post.title}}</p>
+    <p>{{post.content}}</p>
+
+    {% if post.image%}
+
+    <img src="{{ post.image.url }}" />
+
+    {% endif %}
+    
+    <p>{{post.created_at}}</p>
+
+
+</body>
+
+</html>

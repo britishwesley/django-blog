@@ -1,0 +1,41 @@
+{%  extend "base.html"  %}
+
+
+{% block content %}
+
+
+
+    
+    <form method="POST" action="" enctype="multipart/form-data"  >
+        {% csrf_token %}
+
+
+        <input name="title" id="title" placeholder="Enter post title" value= "{{ form.title.value|default_if_none:'' }}"  />
+        <textarea name="content" placeholder="Enter post content">{{form.content.value|default_if_none:'' }}</textarea>
+         
+        {% if post.image%}
+
+    <img src="{{ post.image.url }}" />
+
+    {% endif %}
+
+        <input type="file" name="image" id="Enter post title"  />
+         
+    
+        <button>Submit</button>
+
+    </form>
+
+
+    <ul>
+        {% for post in posts %}
+        <li>
+            <p class="post-title"></p><b>Title:</b> {{ post.title}}: </p>
+            <p class="post-content"></p><b>Body:</b> {{post.content}}</p>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    
+{% endblock %}
