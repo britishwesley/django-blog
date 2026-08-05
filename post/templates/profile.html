@@ -15,12 +15,13 @@
     <img src="{{ profile.image.url }}" alt="Profile Picture" width="150">
 {% endif %}
 
-<form>
+<form method="POST" action="{% profile %}">  
+
 <label for="fname">First name:</label><br>
 <input type="text" id="fname" name="fname"><br>
 <br>
   <input type="submit" value="Submit">
-  
+
 </form>
 
 
